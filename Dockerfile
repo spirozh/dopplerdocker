@@ -11,6 +11,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN mkdir /.aptible/
 ADD Procfile /.aptible/Procfile
 
-COPY app* /app
+COPY app* /app/
 
 EXPOSE 5000 5001
