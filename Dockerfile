@@ -1,5 +1,8 @@
 FROM python:3-alpine
 
+RUN mkdir /.aptible/
+ADD Procfile /.aptible/Procfile
+
 RUN mkdir /app
 WORKDIR /app
 
@@ -12,4 +15,5 @@ COPY app2.py /app
 EXPOSE 5000
 EXPOSE 5001
 
-RUN (curl -Ls https://cli.doppler.com/install.sh || wget -qO- https://cli.doppler.com/install.sh) | sh
+ENV URL=https://cli.doppler.com/install.sh
+RUN wget -qO- $URL | sh
