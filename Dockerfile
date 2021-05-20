@@ -1,7 +1,5 @@
 FROM python:3-alpine
 
-EXPOSE 5000 5001
-
 RUN wget -qO- https://cli.doppler.com/install.sh | sh
 
 RUN mkdir /app
@@ -16,3 +14,4 @@ ADD Procfile /.aptible/Procfile
 COPY app1.py /app
 COPY app2.py /app
 
+EXPOSE 5000 5001
